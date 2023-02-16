@@ -1,0 +1,122 @@
+|Top_Module
+clk => clk.IN2
+reset => reset.IN2
+sel_out[0] <= seg7:seg7.sel_out
+sel_out[1] <= seg7:seg7.sel_out
+sel_out[2] <= seg7:seg7.sel_out
+sel_out[3] <= seg7:seg7.sel_out
+sel_out[4] <= seg7:seg7.sel_out
+sel_out[5] <= seg7:seg7.sel_out
+dig_out[0] <= seg7:seg7.dig_out
+dig_out[1] <= seg7:seg7.dig_out
+dig_out[2] <= seg7:seg7.dig_out
+dig_out[3] <= seg7:seg7.dig_out
+dig_out[4] <= seg7:seg7.dig_out
+dig_out[5] <= seg7:seg7.dig_out
+dig_out[6] <= seg7:seg7.dig_out
+dig_out[7] <= seg7:seg7.dig_out
+
+
+|Top_Module|freq_divider:freq_divider_1Hz
+clk => clk_out~reg0.CLK
+clk => clk_cnt[0].CLK
+clk => clk_cnt[1].CLK
+clk => clk_cnt[2].CLK
+clk => clk_cnt[3].CLK
+clk => clk_cnt[4].CLK
+clk => clk_cnt[5].CLK
+clk => clk_cnt[6].CLK
+clk => clk_cnt[7].CLK
+clk => clk_cnt[8].CLK
+clk => clk_cnt[9].CLK
+clk => clk_cnt[10].CLK
+clk => clk_cnt[11].CLK
+clk => clk_cnt[12].CLK
+clk => clk_cnt[13].CLK
+clk => clk_cnt[14].CLK
+clk => clk_cnt[15].CLK
+clk => clk_cnt[16].CLK
+clk => clk_cnt[17].CLK
+clk => clk_cnt[18].CLK
+clk => clk_cnt[19].CLK
+clk => clk_cnt[20].CLK
+clk => clk_cnt[21].CLK
+clk => clk_cnt[22].CLK
+clk => clk_cnt[23].CLK
+clk => clk_cnt[24].CLK
+clk => clk_cnt[25].CLK
+reset => clk_cnt[0].ACLR
+reset => clk_cnt[1].ACLR
+reset => clk_cnt[2].ACLR
+reset => clk_cnt[3].ACLR
+reset => clk_cnt[4].ACLR
+reset => clk_cnt[5].ACLR
+reset => clk_cnt[6].ACLR
+reset => clk_cnt[7].ACLR
+reset => clk_cnt[8].ACLR
+reset => clk_cnt[9].ACLR
+reset => clk_cnt[10].ACLR
+reset => clk_cnt[11].ACLR
+reset => clk_cnt[12].ACLR
+reset => clk_cnt[13].ACLR
+reset => clk_cnt[14].ACLR
+reset => clk_cnt[15].ACLR
+reset => clk_cnt[16].ACLR
+reset => clk_cnt[17].ACLR
+reset => clk_cnt[18].ACLR
+reset => clk_cnt[19].ACLR
+reset => clk_cnt[20].ACLR
+reset => clk_cnt[21].ACLR
+reset => clk_cnt[22].ACLR
+reset => clk_cnt[23].ACLR
+reset => clk_cnt[24].ACLR
+reset => clk_cnt[25].ACLR
+reset => clk_out~reg0.ACLR
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Module|up_counter:up_counter
+clk => cnt[0]~reg0.CLK
+clk => cnt[1]~reg0.CLK
+clk => cnt[2]~reg0.CLK
+clk => cnt[3]~reg0.CLK
+reset => cnt[0]~reg0.ACLR
+reset => cnt[1]~reg0.ACLR
+reset => cnt[2]~reg0.ACLR
+reset => cnt[3]~reg0.ACLR
+cnt[0] <= cnt[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[1] <= cnt[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[2] <= cnt[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[3] <= cnt[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Module|seg7:seg7
+sel_in[0] => Decoder0.IN2
+sel_in[0] => Decoder1.IN1
+sel_in[0] => Decoder2.IN1
+sel_in[1] => Decoder0.IN1
+sel_in[1] => Decoder1.IN0
+sel_in[1] => Decoder3.IN1
+sel_in[2] => Decoder0.IN0
+sel_in[2] => Decoder2.IN0
+sel_in[2] => Decoder3.IN0
+dig_in[0] => Decoder4.IN3
+dig_in[1] => Decoder4.IN2
+dig_in[2] => Decoder4.IN1
+dig_in[3] => Decoder4.IN0
+sel_out[0] <= Decoder3.DB_MAX_OUTPUT_PORT_TYPE
+sel_out[1] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+sel_out[2] <= sel_out.DB_MAX_OUTPUT_PORT_TYPE
+sel_out[3] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+sel_out[4] <= sel_out.DB_MAX_OUTPUT_PORT_TYPE
+sel_out[5] <= sel_out.DB_MAX_OUTPUT_PORT_TYPE
+dig_out[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+dig_out[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+dig_out[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+dig_out[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+dig_out[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+dig_out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+dig_out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+dig_out[7] <= Decoder4.DB_MAX_OUTPUT_PORT_TYPE
+
+
