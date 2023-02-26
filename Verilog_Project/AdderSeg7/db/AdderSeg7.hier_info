@@ -1,0 +1,41 @@
+|AdderSeg7
+clk => clk.IN4
+rst => rst.IN4
+key_col[0] => key_col[0].IN1
+key_col[1] => key_col[1].IN1
+key_col[2] => key_col[2].IN1
+key_col[3] => key_col[3].IN1
+key_row[0] << Key:Key1.port3
+key_row[1] << Key:Key2.port3
+key_row[2] << Key:Key3.port3
+key_row[3] << Key:Key4.port3
+
+
+|AdderSeg7|Key:Key1
+clk => ~NO_FANOUT~
+rst => ~NO_FANOUT~
+key_col => key_row.DATAIN
+key_row <= key_col.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AdderSeg7|Key:Key2
+clk => ~NO_FANOUT~
+rst => ~NO_FANOUT~
+key_col => key_row.DATAIN
+key_row <= key_col.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AdderSeg7|Key:Key3
+clk => ~NO_FANOUT~
+rst => ~NO_FANOUT~
+key_col => key_row.DATAIN
+key_row <= key_col.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AdderSeg7|Key:Key4
+clk => ~NO_FANOUT~
+rst => ~NO_FANOUT~
+key_col => key_row.DATAIN
+key_row <= key_col.DB_MAX_OUTPUT_PORT_TYPE
+
+

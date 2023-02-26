@@ -1,0 +1,171 @@
+// ===================================================
+//	Date : 2023/2/26
+
+// Project : Seg4bit_Counter	
+
+// Author : Vic
+// ===================================================
+
+module Seg4bit_Counter(
+	input clk_in, rst,
+	output [6:0] dig_out,
+	output [3:0] sel_out
+	);
+
+	wire [3:0] cnt;
+	wire clk_1hz;
+	
+	freq_devider freq_devider(
+		.clk_in(clk_in),
+		.rst(rst),
+		.clk_out(clk_1hz)
+	);
+	
+	up_counter up_counter(
+		.clk(clk_1hz),
+		.rst(rst),
+		.cnt(cnt)
+	);
+	
+	seg7 seg7(
+		.clk(clk_in),
+		.rst(rst),
+		.dig_in(cnt),
+		.dig_out(dig_out),
+		.sel_out(sel_out)
+	);
+
+endmodule
+
+// ===================================================
+
+
+module freq_devider(	
+	input clk_in, rst,
+	output reg clk_out
+	);	// 50MHz -> 1Hz
+
+	parameter div = 26'd50_000_000;
+	parameter div2 = 26'd25_000_000;
+	parameter width = 26;
+	
+
+	reg [width-1:0] clk_cnt;
+	
+	always @(posedge clk_in, negedge rst) begin
+		if(!rst)
+			clk_cnt <= 0;
+		else if(clk_cnt == div - 1)
+			clk_cnt <= 0;
+		else
+			clk_cnt = clk_cnt + 1'b1;
+	end
+	
+	always @(posedge clk_in, negedge rst) begin
+		if(!rst)
+			clk_out <= 0;
+		else if(clk_cnt <= div2 - 1)
+			clk_out <= 0;
+		else
+			clk_out = 1'b1;
+	end
+	
+
+endmodule
+
+
+// ===================================================
+
+
+module up_counter(clk, rst, cnt);
+	
+	parameter cnt_min = 4'd0;
+	parameter cnt_max = 4'd9;
+	parameter cnt_itv = 1'b1;
+	parameter cnt_width = 4;
+	
+	input clk, rst;
+	output reg [cnt_width-1:0] cnt;
+	
+	always @(posedge clk, negedge rst) begin
+		if(!rst)
+			cnt <= cnt_min;
+		else if(cnt == cnt_max)
+			cnt <= cnt_min;
+		else 
+			cnt <= cnt + cnt_itv;
+	end
+	
+endmodule
+
+
+// ===================================================
+
+
+module seg7(
+	input clk, rst,
+	input [3:0] dig_in,
+	output reg [6:0] dig_out,
+	output reg [3:0] sel_out
+);
+	
+	parameter pn = 1;	// 0 : npn  1 : pnp
+	parameter DOT = 1'b0;
+	parameter    ZERO    =7'b1111110,
+                ONE     =7'b0110000,
+                TWO     =7'b1101101,
+                THREE   =7'b1111001,
+                FOUR    =7'b0110011,
+                FIVE    =7'b1011011,
+                SIX     =7'b1011111,
+                SEVEN   =7'b1110000,
+                EIGHT   =7'b1111111,
+                NINE    =7'b1111011;
+	
+	always @(posedge clk, negedge rst) begin
+		if(!rst)
+			sel_out <= 4'b0001;
+		else begin
+			integer i;
+			sel_out <= 4'b0001;
+			for(i=0;i<4;i=i+1)
+				sel_out <= {sel_out[2:0], sel_out[3]};
+		end
+	end
+	
+	always @(posedge clk, negedge rst) begin
+		if(!rst) 
+			dig_out <= (!pn) ? 7'b1111111 : 7'b0000000;
+		else if(!pn) begin		// npn
+			case(dig_in)			// a b c d e f g
+				4'd0:	dig_out <= ~ZERO;
+				4'd1:	dig_out <= ~ONE;
+				4'd2:	dig_out <= ~TWO;
+				4'd3:	dig_out <= ~THREE;
+				4'd4:	dig_out <= ~FOUR;
+				4'd5:	dig_out <= ~FIVE;
+				4'd6:	dig_out <= ~SIX;
+				4'd7:	dig_out <= ~SEVEN;
+				4'd8:	dig_out <= ~EIGHT;
+				4'd9:	dig_out <= ~NINE;
+				default: dig_out <= 7'b1111111;
+			endcase
+		end
+		else begin					// pnp
+			case(dig_in)			// a b c d e f g
+				4'd0:	dig_out <= ZERO;
+				4'd1:	dig_out <= ONE;
+				4'd2:	dig_out <= TWO;
+				4'd3:	dig_out <= THREE;
+				4'd4:	dig_out <= FOUR;
+				4'd5:	dig_out <= FIVE;
+				4'd6:	dig_out <= SIX;
+				4'd7:	dig_out <= SEVEN;
+				4'd8:	dig_out <= EIGHT;
+				4'd9:	dig_out <= NINE;
+				default: dig_out <= 7'b0000000;
+			endcase
+		end
+	end
+
+endmodule

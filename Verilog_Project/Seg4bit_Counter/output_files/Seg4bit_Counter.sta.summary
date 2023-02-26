@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk_in'
+Slack : -3.272
+TNS   : -64.169
+
+Type  : Slow 1200mV 85C Model Setup 'freq_devider:freq_devider|clk_out'
+Slack : -0.467
+TNS   : -1.273
+
+Type  : Slow 1200mV 85C Model Hold 'freq_devider:freq_devider|clk_out'
+Slack : 0.451
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk_in'
+Slack : 0.508
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_in'
+Slack : -3.000
+TNS   : -59.506
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'freq_devider:freq_devider|clk_out'
+Slack : -1.487
+TNS   : -5.948
+
+Type  : Slow 1200mV 0C Model Setup 'clk_in'
+Slack : -3.048
+TNS   : -56.143
+
+Type  : Slow 1200mV 0C Model Setup 'freq_devider:freq_devider|clk_out'
+Slack : -0.311
+TNS   : -0.834
+
+Type  : Slow 1200mV 0C Model Hold 'freq_devider:freq_devider|clk_out'
+Slack : 0.400
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk_in'
+Slack : 0.468
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_in'
+Slack : -3.000
+TNS   : -59.506
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'freq_devider:freq_devider|clk_out'
+Slack : -1.487
+TNS   : -5.948
+
+Type  : Fast 1200mV 0C Model Setup 'clk_in'
+Slack : -0.859
+TNS   : -10.890
+
+Type  : Fast 1200mV 0C Model Setup 'freq_devider:freq_devider|clk_out'
+Slack : 0.349
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'freq_devider:freq_devider|clk_out'
+Slack : 0.185
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk_in'
+Slack : 0.204
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_in'
+Slack : -3.000
+TNS   : -43.219
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'freq_devider:freq_devider|clk_out'
+Slack : -1.000
+TNS   : -4.000
+
+------------------------------------------------------------

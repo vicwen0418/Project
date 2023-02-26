@@ -1,0 +1,87 @@
+|DigitalClock
+clk => clk.IN5
+rst => rst.IN5
+key_in[0] => key_in[0].IN1
+key_in[1] => key_in[1].IN1
+key_in[2] => key_in[2].IN1
+key_in[3] => key_in[3].IN1
+key_in[4] => key_in[4].IN1
+seg[0] <= <GND>
+seg[1] <= <GND>
+seg[2] <= <GND>
+seg[3] <= <GND>
+seg[4] <= <GND>
+seg[5] <= <GND>
+seg[6] <= <GND>
+seg[7] <= <GND>
+sel[0] <= <GND>
+sel[1] <= <GND>
+sel[2] <= <GND>
+sel[3] <= <GND>
+
+
+|DigitalClock|KeyDebounce:KeyDebounce0
+clk => bounce[0].CLK
+clk => bounce[1].CLK
+clk => bounce[2].CLK
+clk => bounce[3].CLK
+rst => bounce[0].PRESET
+rst => bounce[1].PRESET
+rst => bounce[2].PRESET
+rst => bounce[3].PRESET
+key_in => bounce[0].DATAIN
+key_out <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DigitalClock|KeyDebounce:KeyDebounce1
+clk => bounce[0].CLK
+clk => bounce[1].CLK
+clk => bounce[2].CLK
+clk => bounce[3].CLK
+rst => bounce[0].PRESET
+rst => bounce[1].PRESET
+rst => bounce[2].PRESET
+rst => bounce[3].PRESET
+key_in => bounce[0].DATAIN
+key_out <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DigitalClock|KeyDebounce:KeyDebounce2
+clk => bounce[0].CLK
+clk => bounce[1].CLK
+clk => bounce[2].CLK
+clk => bounce[3].CLK
+rst => bounce[0].PRESET
+rst => bounce[1].PRESET
+rst => bounce[2].PRESET
+rst => bounce[3].PRESET
+key_in => bounce[0].DATAIN
+key_out <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DigitalClock|KeyDebounce:KeyDebounce3
+clk => bounce[0].CLK
+clk => bounce[1].CLK
+clk => bounce[2].CLK
+clk => bounce[3].CLK
+rst => bounce[0].PRESET
+rst => bounce[1].PRESET
+rst => bounce[2].PRESET
+rst => bounce[3].PRESET
+key_in => bounce[0].DATAIN
+key_out <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DigitalClock|KeyDebounce:KeyDebounce4
+clk => bounce[0].CLK
+clk => bounce[1].CLK
+clk => bounce[2].CLK
+clk => bounce[3].CLK
+rst => bounce[0].PRESET
+rst => bounce[1].PRESET
+rst => bounce[2].PRESET
+rst => bounce[3].PRESET
+key_in => bounce[0].DATAIN
+key_out <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+

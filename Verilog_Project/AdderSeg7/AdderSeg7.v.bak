@@ -1,0 +1,27 @@
+module AdderSeg7();
+
+	
+
+endmodule
+
+
+
+module Key();
+
+	input clk, rst;
+	input key_col = 1'b1;
+	output reg key_row;
+	
+	
+	assign key_col <= key_row;
+
+	
+
+endmodule
+
+
+
+module seg_driver();
+
+
+endmodule

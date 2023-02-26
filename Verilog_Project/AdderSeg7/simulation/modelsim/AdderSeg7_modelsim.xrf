@@ -1,0 +1,14 @@
+vendor_name = ModelSim
+source_file = 1, D:/vic/Project/Verilog_Project/AdderSeg7/AdderSeg7.v
+source_file = 1, D:/vic/Project/Verilog_Project/AdderSeg7/db/AdderSeg7.cbx.xml
+design_name = AdderSeg7
+instance = comp, \key_row[0]~output\, key_row[0]~output, AdderSeg7, 1
+instance = comp, \key_row[1]~output\, key_row[1]~output, AdderSeg7, 1
+instance = comp, \key_row[2]~output\, key_row[2]~output, AdderSeg7, 1
+instance = comp, \key_row[3]~output\, key_row[3]~output, AdderSeg7, 1
+instance = comp, \key_col[0]~input\, key_col[0]~input, AdderSeg7, 1
+instance = comp, \key_col[1]~input\, key_col[1]~input, AdderSeg7, 1
+instance = comp, \key_col[2]~input\, key_col[2]~input, AdderSeg7, 1
+instance = comp, \key_col[3]~input\, key_col[3]~input, AdderSeg7, 1
+instance = comp, \clk~input\, clk~input, AdderSeg7, 1
+instance = comp, \rst~input\, rst~input, AdderSeg7, 1
