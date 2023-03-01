@@ -14,11 +14,13 @@ module Seg4bit_Counter(
 
 	wire [3:0] cnt;
 	wire clk_1hz;
+	wire clk100hz_out;
 	
 	freq_devider freq_devider(
 		.clk_in(clk_in),
 		.rst(rst),
-		.clk_out(clk_1hz)
+		.clk_out(clk_1hz),
+		.clk100hz_out(clk100hz_out)
 	);
 	
 	up_counter up_counter(
@@ -28,7 +30,7 @@ module Seg4bit_Counter(
 	);
 	
 	seg7 seg7(
-		.clk(clk_in),
+		.clk(clk100hz_out),
 		.rst(rst),
 		.dig_in(cnt),
 		.dig_out(dig_out),
@@ -42,7 +44,8 @@ endmodule
 
 module freq_devider(	
 	input clk_in, rst,
-	output reg clk_out
+	output reg clk_out,
+	output reg clk100hz_out
 	);	// 50MHz -> 1Hz
 
 	parameter div = 26'd50_000_000;

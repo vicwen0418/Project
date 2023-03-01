@@ -1,17 +1,17 @@
 |Seg4bit_Counter
-clk_in => clk_in.IN2
+clk_in => clk_in.IN1
 rst => rst.IN3
-dig_out[0] << seg7:seg7.dig_out
-dig_out[1] << seg7:seg7.dig_out
-dig_out[2] << seg7:seg7.dig_out
-dig_out[3] << seg7:seg7.dig_out
-dig_out[4] << seg7:seg7.dig_out
-dig_out[5] << seg7:seg7.dig_out
-dig_out[6] << seg7:seg7.dig_out
-sel_out[0] << seg7:seg7.sel_out
-sel_out[1] << seg7:seg7.sel_out
-sel_out[2] << seg7:seg7.sel_out
-sel_out[3] << seg7:seg7.sel_out
+dig_out[0] <= seg7:seg7.dig_out
+dig_out[1] <= seg7:seg7.dig_out
+dig_out[2] <= seg7:seg7.dig_out
+dig_out[3] <= seg7:seg7.dig_out
+dig_out[4] <= seg7:seg7.dig_out
+dig_out[5] <= seg7:seg7.dig_out
+dig_out[6] <= seg7:seg7.dig_out
+sel_out[0] <= seg7:seg7.sel_out
+sel_out[1] <= seg7:seg7.sel_out
+sel_out[2] <= seg7:seg7.sel_out
+sel_out[3] <= seg7:seg7.sel_out
 
 
 |Seg4bit_Counter|freq_devider:freq_devider
@@ -42,6 +42,23 @@ clk_in => clk_cnt[22].CLK
 clk_in => clk_cnt[23].CLK
 clk_in => clk_cnt[24].CLK
 clk_in => clk_cnt[25].CLK
+clk_in => clk100hz_out~reg0.CLK
+clk_in => cnt[0].CLK
+clk_in => cnt[1].CLK
+clk_in => cnt[2].CLK
+clk_in => cnt[3].CLK
+clk_in => cnt[4].CLK
+clk_in => cnt[5].CLK
+clk_in => cnt[6].CLK
+clk_in => cnt[7].CLK
+clk_in => cnt[8].CLK
+clk_in => cnt[9].CLK
+clk_in => cnt[10].CLK
+clk_in => cnt[11].CLK
+clk_in => cnt[12].CLK
+clk_in => cnt[13].CLK
+clk_in => cnt[14].CLK
+clk_in => cnt[15].CLK
 rst => clk_cnt[0].ACLR
 rst => clk_cnt[1].ACLR
 rst => clk_cnt[2].ACLR
@@ -70,6 +87,7 @@ rst => clk_cnt[24].ACLR
 rst => clk_cnt[25].ACLR
 rst => clk_out~reg0.ACLR
 clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk100hz_out <= clk100hz_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Seg4bit_Counter|up_counter:up_counter
