@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for AdderSeg7_Dip
-Wed Mar 01 18:58:11 2023
+Thu Mar 02 12:40:34 2023
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -2132,7 +2132,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Wed Mar 01 18:58:09 2023
+    Info: Processing started: Thu Mar 02 12:40:32 2023
 Info: Command: quartus_sta AdderSeg7_Dip -c AdderSeg7_Dip
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -2215,7 +2215,7 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 4636 megabytes
-    Info: Processing ended: Wed Mar 01 18:58:11 2023
+    Info: Processing ended: Thu Mar 02 12:40:34 2023
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 

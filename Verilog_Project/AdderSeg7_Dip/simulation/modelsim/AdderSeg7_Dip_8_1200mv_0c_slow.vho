@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "03/01/2023 18:58:13"
+-- DATE "03/02/2023 12:40:36"
 
 -- 
 -- Device: Altera EP3C40Q240C8 Package PQFP240
@@ -37,8 +37,8 @@ ENTITY 	AdderSeg7_Dip IS
     PORT (
 	clk_50Mhz : IN std_logic;
 	dip : IN std_logic_vector(7 DOWNTO 0);
-	dig_out : BUFFER std_logic_vector(7 DOWNTO 0);
-	sel_out : BUFFER std_logic_vector(3 DOWNTO 0)
+	dig_out : OUT std_logic_vector(7 DOWNTO 0);
+	sel_out : OUT std_logic_vector(3 DOWNTO 0)
 	);
 END AdderSeg7_Dip;
 

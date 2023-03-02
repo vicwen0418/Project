@@ -92,13 +92,13 @@ module dip_switch(
 		
 		for(i=0;i<8;i=i+1) begin
 		
-			if(bin[11:8] > 4'd4)  bin[11:8]  = bin[11:8]  + 4'd3; 
+			if(bin[11:8] > 4'd4)  bin[11:8]  = bin[11:8]  + 4'd3;
 			
-			if(bin[15:12] > 4'd4) bin[15:12] = bin[15:12] + 4'd3;
+			if(bin[15:12] > 4'd4) bin[15:12] = bin[15:12] + 4'd3; 
 			
 			if(bin[19:16] > 4'd4) bin[19:16] = bin[19:16] + 4'd3;
 			
-			else bin = {bin[18:0], 1'b0};
+			bin = {bin[18:0], 1'b0};
 			
 		end
 	end
@@ -134,7 +134,6 @@ module seg_driver(
 				 
 	assign {hundred, ten, one} = bcd[11:0];
 	
-	
 	// initial
 	initial
 		sel_out = 4'b1110;
@@ -155,13 +154,13 @@ module seg_driver(
 	// sum to digital num
 	always @(posedge clk_50Mhz) begin
 		case(sel_out)
-			4'b1110: begin choose_num(one, dig_out); end
+			4'b1110: choose_num(one, dig_out);
 			
-			4'b1101: begin choose_num(ten, dig_out); end
+			4'b1101: choose_num(ten, dig_out);
 			
-			4'b1011: begin choose_num(hundred, dig_out); end
+			4'b1011: choose_num(hundred, dig_out);
 			
-			4'b0111: begin dig_out = {ZERO, DOT}; end
+			4'b0111: dig_out = {ZERO, DOT};
 		endcase
 	end
 	

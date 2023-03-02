@@ -8,18 +8,18 @@ dip[4] => dip[4].IN1
 dip[5] => dip[5].IN1
 dip[6] => dip[6].IN1
 dip[7] => dip[7].IN1
-dig_out[0] << seg_driver:seg_driver.dig_out
-dig_out[1] << seg_driver:seg_driver.dig_out
-dig_out[2] << seg_driver:seg_driver.dig_out
-dig_out[3] << seg_driver:seg_driver.dig_out
-dig_out[4] << seg_driver:seg_driver.dig_out
-dig_out[5] << seg_driver:seg_driver.dig_out
-dig_out[6] << seg_driver:seg_driver.dig_out
-dig_out[7] << seg_driver:seg_driver.dig_out
-sel_out[0] << seg_driver:seg_driver.sel_out
-sel_out[1] << seg_driver:seg_driver.sel_out
-sel_out[2] << seg_driver:seg_driver.sel_out
-sel_out[3] << seg_driver:seg_driver.sel_out
+dig_out[0] <= seg_driver:seg_driver.dig_out
+dig_out[1] <= seg_driver:seg_driver.dig_out
+dig_out[2] <= seg_driver:seg_driver.dig_out
+dig_out[3] <= seg_driver:seg_driver.dig_out
+dig_out[4] <= seg_driver:seg_driver.dig_out
+dig_out[5] <= seg_driver:seg_driver.dig_out
+dig_out[6] <= seg_driver:seg_driver.dig_out
+dig_out[7] <= seg_driver:seg_driver.dig_out
+sel_out[0] <= seg_driver:seg_driver.sel_out
+sel_out[1] <= seg_driver:seg_driver.sel_out
+sel_out[2] <= seg_driver:seg_driver.sel_out
+sel_out[3] <= seg_driver:seg_driver.sel_out
 
 
 |AdderSeg7_Dip|freq_divider:freq_divider

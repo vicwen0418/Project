@@ -1,5 +1,6 @@
 vendor_name = ModelSim
 source_file = 1, D:/vic/Project/Verilog_Project/AdderSeg7_Dip/AdderSeg7_Dip.v
+source_file = 1, D:/vic/Project/Verilog_Project/AdderSeg7_Dip/output_files/Chain1.cdf
 source_file = 1, D:/vic/Project/Verilog_Project/AdderSeg7_Dip/db/AdderSeg7_Dip.cbx.xml
 design_name = AdderSeg7_Dip
 instance = comp, \dig_out[0]~output\, dig_out[0]~output, AdderSeg7_Dip, 1
